@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rinat Shaberdiyev - Yönetim Bilişim Sistemleri & Yazılım Geliştirici</title>
-  
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Rinat Shaberdiyev - Yönetim Bilişim Sistemleri öğrencisi, Yazılım Geliştirici ve AI Enthusiast. Python, C#, SQL ve daha fazlası.">
-  <meta name="keywords" content="Rinat Shaberdiyev, yazılım geliştirici, YBS, python, c#, sql, yapay zeka, portfolio">
+  <meta name="description" content="Rinat Shaberdiyev - Yönetim Bilişim Sistemleri öğrencisi, Yazılım Geliştirici ve AI Enthusiast.">
+  <meta name="keywords" content="Rinat Shaberdiyev">
   <meta name="author" content="Rinat Shaberdiyev">
-  
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rinat2001.github.io/">
   <meta property="og:title" content="Rinat Shaberdiyev - Portfolio">
   <meta property="og:description" content="Yönetim Bilişim Sistemleri öğrencisi, Yazılım Geliştirici ve AI Enthusiast.">
   <meta property="og:image" content="https://rinat2001.github.io/profil.jpg">
-
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://rinat2001.github.io/">
@@ -40,7 +36,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+  <rect width='100' height='100' fill='white'/>
+  <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='70' font-family='Arial' fill='black'>R</text>
+</svg>">
   
   <style>
     /* Genel stiller ve gradient background */
@@ -57,18 +57,37 @@
     .btn {
       background: #FFD700;
       color: #1E1E2F;
-      padding: 8px 12px;
-      border-radius: 10px;
+      padding: 12px 24px;
+      border-radius: 30px;
       font-weight: 600;
       text-decoration: none;
-      transition: transform .2s, box-shadow .2s, opacity .2s;
+      transition: all 0.3s ease;
       display: inline-block;
       margin: 5px;
+      border: 2px solid #FFD700;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #1E1E2F;
+      transition: all 0.4s ease;
+      z-index: -1;
+    }
+    .btn:hover:before {
+      left: 0;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+      color: #FFD700;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     .btn-ghost {
@@ -78,7 +97,8 @@
     }
 
     .btn-ghost:hover {
-      opacity: .85;
+      background: #FFD700;
+      color: #FFD700;
     }
 
     body {
@@ -116,6 +136,11 @@
       z-index: 1001;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    nav.scrolled {
+      padding: 10px 20px;
+      background: rgba(30, 30, 47, 0.95);
     }
 
     .nav-container {
@@ -159,7 +184,6 @@
     }
 
     nav a {
-      color: white;
       margin: 0 20px;
       text-decoration: none;
       font-weight: 600;
@@ -214,12 +238,27 @@
       border-bottom: 2px solid rgba(255, 255, 255, 0.5);
       padding-bottom: 10px;
       margin-bottom: 25px;
-      font-weight: 600;
+      font-weight: 700;
       text-shadow: 0 0 4px #000;
+      position: relative;
+      display: inline-block;
+    }
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: #FFD700;
+      transition: width 0.3s ease;
+    }
+    h2:hover:after {
+      width: 100%;
     }
 
     section {
-      padding: 50px 20px;
+      padding: 80px 20px;
       max-width: 1000px;
       margin: auto;
     }
@@ -236,13 +275,27 @@
       padding: 25px 20px;
       text-align: center;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.4s, box-shadow 0.4s, background 0.3s;
+      transition: all 0.4s ease;
       cursor: default;
       transform-style: preserve-3d;
       backdrop-filter: blur(5px);
       color: inherit;
       position: relative;
       overflow: hidden;
+    }
+    .card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255,215,0,0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .card:hover:before {
+      opacity: 1;
     }
 
     .card:hover {
@@ -298,6 +351,7 @@
 
     a:hover {
       opacity: 0.8;
+      text-decoration: none;
     }
 
     /* Project card styles */
@@ -307,75 +361,32 @@
       justify-content: center;
       gap: 10px;
     }
-
-    /* Form styles */
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 25px;
-      border-radius: 15px;
-      backdrop-filter: blur(5px);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .submit-btn {
-      background: #FFD700;
-      color: #1E1E2F;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-    }
-
-    /* Theme toggle */
-    .theme-toggle {
+    .back-to-top {
       position: fixed;
-      bottom: 20px;
+      bottom: 80px;
       right: 20px;
-      background: rgba(255, 255, 255, 0.1);
       width: 50px;
       height: 50px;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 1000;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
       backdrop-filter: blur(5px);
       border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: rgba(255, 215, 0, 0.2);
     }
 
     @media(max-width:768px) {
@@ -430,8 +441,8 @@
       }
 
       header img {
-        width: 120px;
-        height: 120px;
+        width: 130px;
+        height: 130px;
       }
 
       .grid {
@@ -488,54 +499,6 @@
     html {
       scroll-padding-top: 70px;
     }
-    
-    /* Light theme styles */
-    body.light-theme {
-      color: #333;
-      background: #f8f9fa;
-    }
-    
-    body.light-theme #particlesCanvas {
-      background: #f0f2f5;
-    }
-    
-    body.light-theme .card {
-      background: rgba(255, 255, 255, 0.8);
-      color: #333;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    body.light-theme .card:hover {
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
-    }
-    
-    body.light-theme nav {
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    
-    body.light-theme nav a {
-      color: #333;
-    }
-    
-    body.light-theme .contact-form {
-      background: rgba(255, 255, 255, 0.8);
-      color: #333;
-    }
-    
-    body.light-theme .form-group input,
-    body.light-theme .form-group textarea {
-      background: rgba(255, 255, 255, 0.7);
-      color: #333;
-      border: 1px solid #ddd;
-    }
-    
-    body.light-theme h2 {
-      color: #333;
-      text-shadow: none;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    }
   </style>
 </head>
 
@@ -545,7 +508,7 @@
 
   <nav id="navbar">
     <div class="nav-container">
-      <div class="logo">Rinat Shaberdiyev</div>
+      <div class="logo" style="color: #FFD700;">Rinat Shaberdiyev</div>
       <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
@@ -645,6 +608,12 @@
         <h3>VAKKO CRM Stajı</h3>
         <p>CRM Departmanı, 2024</p>
       </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="600">
+     <img class="icon" src="https://static.thenounproject.com/png/118595-512.png" alt="Trade">
+     <h3>Trade</h3>
+     <p>BIST</p>
+     </div>
+
 
 
       <!-- Sertifikalar -->
@@ -703,12 +672,8 @@
           alt="Portfolio Website">
         <h3>Portfolio Website</h3>
         <p style="margin-top:10px; font-size:0.9rem; opacity:0.9;">
-          HTML • CSS • JavaScript (Canvas) • Font Awesome
+          HTML • CSS • JavaScript
         </p>
-        <div class="project-links">
-          <a href="https://rinat2001.github.io/shaberdiyevren.portfolio.github.ip-/" class="btn" target="_blank">🌐 Live Demo</a>
-          <a href="https://github.com/Rinat2001/Rinat2001.github.io" class="btn btn-ghost" target="_blank">💻 GitHub</a>
-        </div>
       </div>
 
 
@@ -718,9 +683,6 @@
         <h3>AI Savunma Projesi</h3>
         <p style="margin-top:10px; font-size:0.9rem; opacity:0.9;">Yapay zekânın askeri teknolojilerde kullanımını
           araştırdım.</p>
-        <div class="project-links">
-          <a href="#" class="btn btn-ghost">📄 Detaylar</a>
-        </div>
       </div>
       <div class="card" data-aos="flip-left" data-aos-delay="300">
         <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
@@ -728,9 +690,6 @@
         <h3>SQL Veri Analizi</h3>
         <p style="margin-top:10px; font-size:0.9rem; opacity:0.9;">Northwind veri tabanıyla raporlama projesi yaptım.
         </p>
-        <div class="project-links">
-          <a href="#" class="btn btn-ghost">📊 Raporu Gör</a>
-        </div>
       </div>
     </div>
   </section>
@@ -743,21 +702,25 @@
       <div class="card" data-aos="zoom-in" data-aos-delay="100">
         <i class="fas fa-dumbbell icon"></i>
         <h3>Ağırlık Antrenmanı</h3>
+        <p>2022</p>
       </div>
 
       <div class="card" data-aos="zoom-in" data-aos-delay="150">
         <i class="fas fa-book icon"></i>
         <h3>Kitap Okumak</h3>
+        <p>2020</p>
       </div>
 
       <div class="card" data-aos="zoom-in" data-aos-delay="200">
         <i class="fas fa-chess icon"></i>
         <h3>Satranç</h3>
+        <p>2022</p>
       </div>
 
       <div class="card" data-aos="zoom-in" data-aos-delay="250">
         <i class="fas fa-hand-rock icon"></i>
         <h3>Dövüş Sporu (Boks)</h3>
+        <p>2024</p>
       </div>
 
       <div class="card" data-aos="zoom-in" data-aos-delay="300">
@@ -795,30 +758,8 @@
 
   <section id="contact" data-aos="fade-up">
     <h2>İletişim</h2>
-    
-    <div class="contact-form">
-      <form id="contactForm" action="https://formspree.io/f/mjvnzzwz" method="POST">
-        <div class="form-group">
-          <label for="name">Adınız</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">E-posta</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Mesajınız</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">Gönder</button>
-      </form>
-    </div>
-    
     <p style="margin-top: 30px; text-align: center;">
-      📧 <a href="mailto:shaberdiyevrinat@gmail.com">shaberdiyevrinat@gmail.com</a> | 📱 +90 505 874 69 05
+     <a href="mailto:shaberdiyevrinat@gmail.com">shaberdiyevrinat@gmail.com</a>
     </p>
     
     <div style="text-align: center; margin-top: 20px;">
@@ -827,7 +768,7 @@
           style="width:20px; vertical-align:middle; margin-right:5px;">LinkedIn
       </a>
 
-      <a href="https://wa.me/905058746905" target="_blank" class="btn">
+      <a href="https://wa.me/" target="_blank" class="btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
           style="width:20px; vertical-align:middle; margin-right:5px;">WhatsApp
       </a>
@@ -837,25 +778,71 @@
           style="width:20px; vertical-align:middle; margin-right:5px;">GitHub
       </a>
     </div>
+    
   </section>
 
   <footer>
-    <p>© 2024 Rinat Shaberdiyev. Tüm hakları saklıdır.</p>
+    <p>© 2025 Rinat Shaberdiyev. Tüm hakları saklıdır.</p>
   </footer>
-
-  <div class="theme-toggle" id="themeToggle">
-    <i class="fas fa-moon"></i>
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
   </div>
-
   <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
   <script>
     // AOS initialization
+    document.addEventListener('DOMContentLoaded', function(){
     AOS.init({
       duration: 800,
-      once: true,
-      offset: 100
+      once: true
+    });
+    const skillProgressBars = document.querySelectorAll('.skill-progress');
+      skillProgressBars.forEach(bar => {
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 500);
+      });
+      const projectSliders = document.querySelectorAll('.project-slider');
+      projectSliders.forEach(slider => {
+        const slides = slider.querySelectorAll('.project-slide');
+        if (slides.length > 1) {
+          let currentSlide = 0;
+          setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+          }, 3000);
+        }
+      });
+    });
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('navbar');
+      const backToTop = document.getElementById('backToTop');
+      
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    document.getElementById('hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('nav-links').classList.toggle('show');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('hamburger').classList.remove('active');
+        document.getElementById('nav-links').classList.remove('show');
+      });
     });
 
     const hamburger = document.getElementById("hamburger");
@@ -865,6 +852,7 @@
       hamburger.classList.toggle("active");
       navLinks.classList.toggle("show");
     });
+    
 
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-links a').forEach(link => {
@@ -872,24 +860,6 @@
         hamburger.classList.remove('active');
         navLinks.classList.remove('show');
       });
-    });
-
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle.querySelector('i');
-    
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-theme');
-      
-      if (document.body.classList.contains('light-theme')) {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-        localStorage.setItem('theme', 'light');
-      } else {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-        localStorage.setItem('theme', 'dark');
-      }
     });
     
     // Check for saved theme preference
@@ -902,6 +872,10 @@
     // Particles ve Gradient
     const canvas = document.getElementById('particlesCanvas');
     const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
     let particlesArray = [];
     let mouse = { x: null, y: null, radius: 150 };
     let hue = 0;
@@ -909,12 +883,28 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles();
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    const particles = [];
+    const particleCount = 100;
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 1,
+        speedX: (Math.random() - 0.5) * 0.5,
+        speedY: (Math.random() - 0.5) * 0.5,
+        color: document.body.classList.contains('light-theme') 
+          ? `rgba(30, 30, 47, ${Math.random() * 0.2 + 0.1})` 
+          : `rgba(255, 215, 0, ${Math.random() * 0.2 + 0.1})`
+      });
+    }
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -965,6 +955,7 @@
         }
       }
     }
+    
 
     function drawGradient() {
       if (document.body.classList.contains('light-theme')) {
@@ -991,34 +982,6 @@
 
     initParticles();
     animate();
-
-    // Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        fetch(contactForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
-        .then(response => {
-          if (response.ok) {
-            alert('Mesajınız başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğim.');
-            contactForm.reset();
-          } else {
-            throw new Error('Form gönderilemedi.');
-          }
-        })
-        .catch(error => {
-          alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya doğrudan e-posta gönderin.');
-        });
-      });
-    }
   </script>
 
 </body>
